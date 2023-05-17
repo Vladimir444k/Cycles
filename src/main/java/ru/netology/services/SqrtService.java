@@ -5,19 +5,15 @@ public class SqrtService {
         int count = 0;
         int money = 0;
         for (int month = 0; month < 12; month++) {
-            if (money >= expenses) {
-                if (money >= threshold) {
-                    if (money >= income) {
-                        count++;
-                        money = income - expenses - expenses * 2;
-                    } else {
-                        money = income - expenses;
-                    }
+            if (money >= threshold) {
+                if (money >= income) {
+                    count++;
+                    money = income - expenses - expenses * 2;
                 } else {
-                    money = money + income - expenses;
+                    money = income - expenses;
                 }
             } else {
-                money = money + income;
+                money = money + income - expenses;
             }
         }
         return count;
