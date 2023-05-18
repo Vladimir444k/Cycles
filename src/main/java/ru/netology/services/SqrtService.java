@@ -8,9 +8,9 @@ public class SqrtService {
             if (money >= threshold) {
                 if (money >= income) {
                     count++;
-                    money = income - expenses - expenses * 2;
-                } else {
                     money = income - expenses;
+                } else {
+                    money = income - expenses * 4;
                 }
             } else {
                 money = money + income - expenses;
